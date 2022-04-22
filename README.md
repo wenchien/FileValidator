@@ -1,13 +1,13 @@
 # FileValidator
 Various file validator with a single facade for extensibility and cleaner code
 
-##What's behind?
+## What's behind?
 Most of the validators validates by:
 - Read the source file as a byte array
 - Convert to unsigned integer array if needed
 - Compare the "magic-numbers"
 
-##Usage
+## Usage
 - Example usage included in junit test
 - `FileValidator` is the main interface
 - `validate()` is the function that does the validation
@@ -15,8 +15,19 @@ Most of the validators validates by:
 ```Java
   FileValidator fv = FileValidatorDelegator.of(new File("someFile.pdf"));
 ```
+and then you can call
+```Java
+  fv.validate();
+```
+and the interface will automatically find the right validator for the source file.
 
+## Extension
+You can easily create a new file validator type by extending `FileValidator` interface and name your concrete class using the following format:
+`EXTENSION_NAME + FileValidator`
+- Example: to validate a png, create a concrete class of name `PNGFileValidator`
 
+## License
+```
 This is free and unencumbered software released into the public domain.
 
 Anyone is free to copy, modify, publish, use, compile, sell, or
@@ -39,3 +50,4 @@ IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
 OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
+```
