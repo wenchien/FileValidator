@@ -1,0 +1,4 @@
+com\FileValidator\interfaces\FileValidator.class
+com\FileValidator\util\StringUtil.class
+com\FileValidator\concrete\FileValidatorDelegator.class
+com\FileValidator\exceptions\InvalidFileException.class
