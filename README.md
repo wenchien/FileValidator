@@ -27,6 +27,11 @@ Note: This entire lib is not thread-safe
 You can easily create a new file validator type by extending `FileValidator` interface and name your concrete class using the following format:
 `EXTENSION_NAME + FileValidator`
 - Example: to validate a png, create a concrete class of name `PNGFileValidator`
+```Java
+  public class PNGFileValidator implements FileValidator {
+    // To-Dos here
+  }
+```
 
 ## License
 ```
