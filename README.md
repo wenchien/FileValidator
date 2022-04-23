@@ -20,6 +20,7 @@ and then you can call
   fv.validate();
 ```
 and the interface will automatically find the right validator for the source file.
+Note: This entire lib is not thread-safe
 
 ## Extension
 You can easily create a new file validator type by extending `FileValidator` interface and name your concrete class using the following format:
