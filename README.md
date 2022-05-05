@@ -13,7 +13,7 @@ Most of the validators validates by:
 - `validate()` is the function that does the validation
 
 ```Java
-  FileValidator fv = FileValidatorDelegator.of(new File("someFile.pdf"));
+  FileValidator fv = FileValidatorFactory.of(new File("someFile.pdf"));
 ```
 and then you can call
 ```Java
@@ -32,6 +32,30 @@ You can easily create a new file validator type by extending `FileValidator` int
     // To-Dos here
   }
 ```
+
+As of version 1.1, this is no longer the case:
+You are no longer limited to create a `FileValidator` under the same package as other default validator classes. You can still do so if you wish to but you can now specify the fully qualified package name and class suffix name. However, if you don't specify them, the factory method will automatically populate those parameters with default values
+```Java
+package com.someOtherPackage.PNGCustomValidator // You no longer need to conform to the naming scheme as mentioned in the usage section of readme.md
+
+public class PNGCustomValidator implements FileValidator {
+    // To-dos
+}
+```
+
+##Changelog
+1.1 (May 5, 2022) - 
+Change `FileValidatorDelegator` to  `FileValidatorFactory`
+- Added new optional parameters `validatorPackagePrefix` and `validatorClassSuffix` to the static factory method `of()`
+- You are no longer limited to create a `FileValidator` under the same package as other default validator classes. You can still do so if you wish to but you can now specify the fully qualified package name and class suffix name. However, if you don't specify them, the factory method will automatically populate those parameters with default values
+```Java
+package com.someOtherPackage.PNGCustomValidator // You no longer need to conform to the naming scheme as mentioned in the usage section of readme.md
+
+public class PNGCustomValidator implements FileValidator {
+    // To-dos
+}
+```
+
 
 ## License
 ```
