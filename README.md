@@ -43,7 +43,7 @@ public class PNGCustomValidator implements FileValidator {
 }
 ```
 
-##Changelog
+## Changelog
 1.1 (May 5, 2022) - 
 Change `FileValidatorDelegator` to  `FileValidatorFactory`
 - Added new optional parameters `validatorPackagePrefix` and `validatorClassSuffix` to the static factory method `of()`
