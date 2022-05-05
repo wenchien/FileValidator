@@ -44,8 +44,8 @@ public class PNGCustomValidator implements FileValidator {
 ```
 
 ## Changelog
-1.1 (May 5, 2022) - 
-Change `FileValidatorDelegator` to  `FileValidatorFactory`
+1.1 (May 5, 2022) : 
+- Change `FileValidatorDelegator` to  `FileValidatorFactory`
 - Added new optional parameters `validatorPackagePrefix` and `validatorClassSuffix` to the static factory method `of()`
 - You are no longer limited to create a `FileValidator` under the same package as other default validator classes. You can still do so if you wish to but you can now specify the fully qualified package name and class suffix name. However, if you don't specify them, the factory method will automatically populate those parameters with default values
 ```Java
